@@ -1,0 +1,15 @@
+.input__bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    height: 25px;
+    width: auto;
+
+}
+
+.input__bar > input{
+    height: 30px;
+    width: 100%;
+    margin-right: 5px;
+}

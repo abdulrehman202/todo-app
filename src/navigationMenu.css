@@ -1,0 +1,17 @@
+.navigation__menu{
+    display: flex;
+    background-color: brown;
+    width: auto;
+    height: 100%;
+    position: fixed;
+    border-top-right-radius: 10px;
+    float: left;
+}
+.navigation__menu >ul{
+    list-style-type: none;
+}
+
+.navigation__menu >ul>li{
+    margin-left: -20px;
+    padding: 15px;
+}

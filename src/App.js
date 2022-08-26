@@ -1,23 +1,55 @@
-import logo from './logo.svg';
+import {useState } from 'react';
 import './App.css';
+import './listContainer.css'
+import './navigationMenu.css'
+import Task from './Task'
+import InputBar from './InputBar'
+import { useStateValue } from './state_provider';
 
 function App() {
+  
+  const [{todoList}, dispatch] = useStateValue();
+
+
+  const getTasks=()=>
+  {
+    const results = [];
+    
+    todoList.forEach(item=>{
+      if (item.status === 'incomplete') {
+            results.push(
+              <Task id={item.id} text= {item.text} />
+            )
+          }
+        })
+
+        return results;
+  }
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='navigation__menu'>
+        <ul>
+          <li><a>All</a></li>
+          <li><a>Completed</a></li>
+          <li><a>Incomplete</a></li>
+        </ul>
+      </div>
+      <div className='list__container'>
+        <InputBar />
+        <div className='column__title'>
+          <strong>ID</strong>
+          <strong>Task Name</strong>
+          <strong>Action</strong>
+        </div>
+        {
+          getTasks()
+        }
+
+
+      </div>        
+    
     </div>
   );
 }

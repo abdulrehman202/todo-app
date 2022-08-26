@@ -1,0 +1,22 @@
+.list__container{
+    background-color: silver;
+    /* margin: auto; */
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    min-height: 150px;
+    width: 80%;
+    border-radius: 10px;
+    float: right;
+}
+
+.column__title{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 15px;
+}
+
+
+
+
