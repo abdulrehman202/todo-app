@@ -5,7 +5,7 @@ import InputBar from './InputBar'
 import { useStateValue } from './state_provider';
 
 
-function TodoList()
+function TodoList({taskStatus})
 {
     const [{todoList}] = useStateValue();
 
@@ -15,9 +15,14 @@ function TodoList()
       const results = [];
       
       todoList.forEach(item=>{
-        if (item.status === 'incomplete') {
+        if (taskStatus === 'all'){
+            results.push(
+                <Task id={item.id} text= {item.text} showButtons = {false}/>
+              )
+        } 
+        else if (item.status === taskStatus) {
               results.push(
-                <Task id={item.id} text= {item.text} />
+                <Task id={item.id} text= {item.text} showButtons = {taskStatus =='incomplete'}/>
               )
             }
           })
@@ -28,6 +33,7 @@ function TodoList()
     return(
     
     <div className='list__container'>
+      
       <InputBar />
       <div className='column__title'>
         <strong>ID</strong>
@@ -37,7 +43,6 @@ function TodoList()
       {
         getTasks()
       }
-
 
     </div>)
 }

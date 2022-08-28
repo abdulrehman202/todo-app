@@ -10,7 +10,9 @@ function App() {
     <Router>
     <div className="App">
       <Switch>
-        <Route path='/' element={[<NavigationDrawer />, <TodoList />]}></Route>           
+        <Route path='/' element={[<NavigationDrawer />, <TodoList taskStatus='all' />]}></Route>
+        <Route path='/incomplete' element={[<NavigationDrawer />, <TodoList taskStatus='incomplete' />]}></Route>
+        <Route path='/completed' element={[<NavigationDrawer />, <TodoList taskStatus='complete' />]}></Route>           
       </Switch>
     </div>
     </Router>

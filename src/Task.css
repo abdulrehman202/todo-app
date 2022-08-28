@@ -16,11 +16,13 @@
     text-align: center;
 }
 
-.action__buttons{
+.action__buttons >div{
+    display: flex;
+    flex-direction: row;
     width: 30%;
 }
 
-.action__buttons > button{
+.action__buttons >div > button{
     margin-left: 20px;
     height: 40px;
     border: 1px solid;

@@ -2,9 +2,10 @@ import React from 'react';
 import './Task.css';
 import { useStateValue } from './state_provider';
 
-function Task({text, id})
+function Task({text, id, showButtons})
 {
-  const [ dispatch] = useStateValue();
+  console.log('show buttons ', showButtons)
+  const [{}, dispatch] = useStateValue();
 
 
   const markAsCompleted = ()=>
@@ -20,8 +21,15 @@ function Task({text, id})
           <p>{id}</p>
           <p>{text}</p>
           <div className='action__buttons'>
-          <button onClick={markAsCompleted}>Done</button>
-          <button>Remove</button>
+            {
+            showButtons ? (
+              <div>
+              <button onClick={markAsCompleted}>Done</button>
+              <button>Remove</button>
+              </div>
+    
+            ) : 'Status'
+          }
           </div>
           
         </div>
