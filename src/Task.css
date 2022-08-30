@@ -1,19 +1,14 @@
 .task__row{
     display: flex;
-    align-items: center;
     justify-content: space-evenly;
-    padding: 15px;
-    
+    padding: 15px;    
+    border-radius: 5px;
+    border: 1px solid black;
 }
 
-.task__row:nth-child(2){
-    color: chocolate;
+.task__row:nth-child(0){
+    background-color: brown;
     
-}
-
-.task__row > p{
-    width: 70%;
-    text-align: center;
 }
 
 .action__buttons >div{

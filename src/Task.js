@@ -2,9 +2,8 @@ import React from 'react';
 import './Task.css';
 import { useStateValue } from './state_provider';
 
-function Task({text, id, showButtons})
+function Task({text, id, showButtons, status})
 {
-  console.log('show buttons ', showButtons)
   const [{}, dispatch] = useStateValue();
 
 
@@ -17,10 +16,11 @@ function Task({text, id, showButtons})
   }
 
     return(
-        <div className='task__row'>
-          <p>{id}</p>
-          <p>{text}</p>
-          <div className='action__buttons'>
+          <tr className='task__row'>
+            <td>{id}</td>
+            <td>{text}</td>
+            <td>
+            <div className='action__buttons'>
             {
             showButtons ? (
               <div>
@@ -28,11 +28,11 @@ function Task({text, id, showButtons})
               <button>Remove</button>
               </div>
     
-            ) : 'Status'
+            ) : status
           }
           </div>
-          
-        </div>
+            </td>
+          </tr>
     )
 }
 
