@@ -28,3 +28,7 @@
 .action__buttons > button:hover{
     cursor: pointer;
 }
+
+.complete__status{
+    color: green;
+}

@@ -10,9 +10,9 @@ function App() {
     <Router>
     <div className="App">
       <Switch>
-        <Route path='/' element={[<NavigationDrawer />, <TodoList taskStatus='all' />]}></Route>
-        <Route path='/incomplete' element={[<NavigationDrawer />, <TodoList taskStatus='incomplete' />]}></Route>
-        <Route path='/completed' element={[<NavigationDrawer />, <TodoList taskStatus='complete' />]}></Route>           
+        <Route path='/' element={[<NavigationDrawer />, <TodoList screen='all' />]}></Route>
+        <Route path='/incomplete' element={[<NavigationDrawer />, <TodoList screen='incomplete' />]}></Route>
+        <Route path='/completed' element={[<NavigationDrawer />, <TodoList screen='complete' />]}></Route>           
       </Switch>
     </div>
     </Router>

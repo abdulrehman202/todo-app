@@ -6,7 +6,7 @@ import InputBar from './InputBar'
 import { useStateValue } from './state_provider';
 
 
-function TodoList({taskStatus})
+function TodoList({screen})
 {
     const [{todoList}] = useStateValue();
 
@@ -16,9 +16,15 @@ function TodoList({taskStatus})
       const results = [];
       
       todoList.forEach(item=>{
+        if(screen === 'all')
             results.push(
-                <Task id={item.id} text= {item.text} showButtons = {taskStatus === 'incomplete'} status={taskStatus}/>
+                <Task id={item.id} text= {item.text} taskStatus = {item.status}/>
             )
+        
+        else if(screen === item.status)
+        results.push(
+          <Task id={item.id} text= {item.text} taskStatus = {item.status}/>
+      )
           })
   
           return results;

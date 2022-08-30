@@ -2,7 +2,7 @@ import React from 'react';
 import './Task.css';
 import { useStateValue } from './state_provider';
 
-function Task({text, id, showButtons, status})
+function Task({text, id,  taskStatus})
 {
   const [{}, dispatch] = useStateValue();
 
@@ -22,13 +22,13 @@ function Task({text, id, showButtons, status})
             <td>
             <div className='action__buttons'>
             {
-            showButtons ? (
+            taskStatus==='incomplete' ? (
               <div>
               <button onClick={markAsCompleted}>Done</button>
               <button>Remove</button>
               </div>
     
-            ) : status
+            ) : <strong className='complete__status'>{taskStatus.toUpperCase()}</strong>
           }
           </div>
             </td>
