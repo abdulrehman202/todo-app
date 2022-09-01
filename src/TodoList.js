@@ -33,8 +33,10 @@ function TodoList({screen})
     return(
     
     <div className='list__container'>
-      
-      <InputBar />
+      {
+        screen === 'all'?
+        <InputBar />: (<span></span>)
+      }
       <table>
         <tr className='task__row'>
             <th>ID</th>
