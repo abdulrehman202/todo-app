@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import Arrow from '@material-ui/icons/ArrowForward'
 import { useStateValue } from './state_provider';
 import './InputBar.css'
 
