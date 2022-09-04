@@ -7,6 +7,23 @@ export const initialState = {
 export const reducer = (state, action)=>{
     switch(action.type)
     {
+        case 'REMOVE_TASK':
+            let currentList = [...state.todoList]
+
+            let updatedList = [];
+            
+            currentList.forEach(t=>{
+                if(t.id !== action.id)
+                {
+                    updatedList.push(t)
+                }
+            })
+
+            return{
+                ...state,
+                todoList: updatedList,
+            }
+
         case 'ADD_TO_LIST':
             let currentTask = [state.taskId]
             

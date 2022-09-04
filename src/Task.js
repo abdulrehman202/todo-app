@@ -15,8 +15,17 @@ function Task({text, id,  taskStatus})
     })
   }
 
+  const removeFromList = () =>
+  {
+    dispatch({
+      type: 'REMOVE_TASK',
+      id: id,
+    })
+  }
+
     return(
           <tr className='task__row'>
+            
             <td>{id}</td>
             <td>{text}</td>
             <td>
@@ -25,7 +34,7 @@ function Task({text, id,  taskStatus})
             taskStatus==='incomplete' ? (
               <div>
               <button onClick={markAsCompleted}>Done</button>
-              <button>Remove</button>
+              <button onClick={removeFromList}>Remove</button>
               </div>
     
             ) : <strong className='complete__status'>{taskStatus.toUpperCase()}</strong>
